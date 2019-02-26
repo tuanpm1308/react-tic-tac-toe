@@ -1,5 +1,5 @@
 # React Tic Tac Toe
-A Tic Tac Toe game built with React and Redux. View demo at:
+A Tic Tac Toe game built with React and Redux. View demo at:  https://codesandbox.io/s/github/tuanpm1308/react-tic-tac-toe/tree/master/?view=preview
 
 Design is from https://dribbble.com/shots/3402966-Tic-Tac-Toe
 

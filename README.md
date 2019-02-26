@@ -3,6 +3,7 @@ A Tic Tac Toe game built with React and Redux. View demo at:
 
 Design is from https://dribbble.com/shots/3402966-Tic-Tac-Toe
 
+![react-tic-tac-toe](https://raw.githubusercontent.com/tuanpm1308/react-tic-tac-toe/master/preview.png)
 
 ## Why I do this project?
 

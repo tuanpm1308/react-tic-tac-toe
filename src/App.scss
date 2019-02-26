@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+
+body {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  color: #4c6a86;
+}
+
+.game-wrap {
+  max-width: 280px;
+  margin: 100px auto 0;
+  padding: 20px 20px 60px;
+  border: 1px solid #79cadc;
+  box-sizing: border-box;
+  box-shadow: 1px 6px 30px 0 rgba(#79cadc, 0.4);
+
+  @media (max-width: 480px) {
+    margin-top: 10px;
+  }
+
+  .status {
+    display: flex;
+
+    > div {
+      flex: 1 1 0;
+      text-align: center;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        background-size: cover;
+        background-repeat: none;
+      }
+    }
+
+    .status-x {
+      color: #3a98d4;
+
+      &:before {
+        background-image: url(images/x.png);
+      }
+    }
+
+    .status-o {
+      color: #79cadc;
+
+      &:before {
+        background-image: url(images/o.png);
+      }
+    }
+
+    .status-d {
+      color: #91a2ab;
+
+      &:before {
+        background-image: url(images/d.png);
+      }
+    }
+  }
+}
+
+.board-wrap {
+  margin: 40px 10px;
+
+  .board-row {
+    display: flex;
+
+    &:last-child .square {
+      border-bottom: 0;
+    }
+
+    .square {
+      width: 33.33%;
+      position: relative;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      background: transparent no-repeat center;
+      background-size: 65% 65%;
+      padding: 0;
+      margin: 0;
+      border-right: 1px solid #d6e6ea;
+      border-bottom: 1px solid #d6e6ea;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+    }
+
+    .square-x,
+    .square-o {
+      cursor: auto;
+    }
+
+    .square-x {
+      background-image: url(images/x.png);
+    }
+
+    .square-o {
+      background-image: url(images/o.png);
+    }
+  }
+}
+
+.move-status-wrap {
+  text-align: center;
+
+  .move-status {
+    display: inline-flex;
+    margin: 0 auto;
+    border: 1px solid rgba(#d6e6ea, 0.6);
+    border-radius: 24px;
+
+    span {
+      display: inline-flex;
+      border-radius: 50%;
+      padding: 8px;
+      margin-right: 3px;
+      transition: all 0.1s;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        transform: scale(1.15);
+
+        &.o-move {
+          background: darken(#79cadc, 10%);
+        }
+
+        &.x-move {
+          background: darken(#3a98d4, 10%);
+        }
+
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+
+    img {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}

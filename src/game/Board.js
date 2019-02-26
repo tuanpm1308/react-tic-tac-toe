@@ -50,7 +50,7 @@ export class Board extends Component {
       const winner = this.canculateWinner(squares);
 
       if (winner) {
-        this.timmer = setTimeout(() => this.props.newGame(), 2000);
+        this.timmer = setTimeout(() => this.props.newGame(), 1500);
 
         this.props.setCounterStatus(winner);
       }

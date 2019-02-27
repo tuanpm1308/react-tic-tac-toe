@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import SideChooser from "./SideChooser";
 import Board from "./Board";
 import xImage from "../images/x.png";
 import oImage from "../images/o.png";
@@ -8,6 +9,8 @@ export class Game extends Component {
   render() {
     return (
       <div className="game-wrap">
+        <SideChooser />
+
         <div className="status">
           <div className="status-o">
             <span className="win-counter">{this.props.oWin} {this.props.oWin < 2 ? 'win' : 'wins'}</span>

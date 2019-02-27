@@ -65,7 +65,8 @@ export const rootReducer = (state = initialState, action) => {
     case types.WHO_MOVE_FIRST:
       return {
         ...state,
-        isXMove: action.isXMoveFirst
+        isXMove: action.isXMoveFirst,
+        isNewGame: false
       }
 
     default:

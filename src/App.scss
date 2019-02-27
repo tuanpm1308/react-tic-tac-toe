@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:700");
+
+@keyframes slideFadeDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
 
 body {
   font-family: "Ubuntu";
@@ -13,9 +37,74 @@ body {
   border: 1px solid #79cadc;
   box-sizing: border-box;
   box-shadow: 1px 6px 30px 0 rgba(#79cadc, 0.4);
+  position: relative;
 
   @media (max-width: 480px) {
     margin-top: 10px;
+  }
+
+  .side-chooser-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#fff, 0.9);
+    z-index: 9;
+    padding: 60px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-name: slideFadeUp;
+
+    &.inactive {
+      animation-name: slideFadeDown;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 36px 0;
+    }
+
+    .side-chooser {
+      display: flex;
+      justify-content: center;
+
+      span {
+        margin: auto 15px;
+        color: #b1bbc6;
+        font-size: 24px;
+      }
+    }
+
+    button {
+      outline: 0;
+      border: 0;
+      background: transparent no-repeat;
+      background-size: cover;
+      width: 64px;
+      height: 64px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &.side-x {
+        background-image: url(images/x.png);
+      }
+
+      &.side-o {
+        background-image: url(images/o.png);
+      }
+    }
   }
 
   .status {
@@ -47,7 +136,7 @@ body {
     }
 
     .status-o {
-      color: #79cadc;
+      color: #39bcd4;
 
       &:before {
         background-image: url(images/o.png);

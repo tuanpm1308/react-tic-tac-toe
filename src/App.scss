@@ -30,6 +30,16 @@ body {
   color: #4c6a86;
 }
 
+@keyframes line {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 .game-wrap {
   max-width: 280px;
   margin: 100px auto 0;
@@ -155,6 +165,81 @@ body {
 
 .board-wrap {
   margin: 40px 10px;
+  position: relative;
+
+  .winning-line-wrap {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 0 5px;
+    z-index: 9;
+    width: 100%;
+    display: none;
+
+    &[class*=winning-line-wrap-] {
+      display: block;
+
+      .winning-line {
+        animation-name: line;
+      }
+    }
+
+    .winning-line {
+      height: 5px;
+      margin-top: -3px;
+      background: #fd6593;
+      transition: all 0.2s ease-in-out;
+      animation-duration: 0.6s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  .winning-line-wrap-0-2 {
+    top: 16.6667%;
+  }
+
+  .winning-line-wrap-3-5 {
+    top: 50%;
+  }
+
+  .winning-line-wrap-6-8 {
+    top: 83.3333%;
+  }
+
+  .winning-line-wrap-0-6,
+  .winning-line-wrap-1-7,
+  .winning-line-wrap-2-8 {
+    transform: rotate(90deg);
+    transform-origin: top left;
+  }
+
+  .winning-line-wrap-0-6 {
+    left: 16.6667%;
+  }
+
+  .winning-line-wrap-1-7 {
+    left: 50%;
+  }
+
+  .winning-line-wrap-2-8 {
+    left: 83.3333%;
+  }
+
+  .winning-line-wrap-0-8,
+  .winning-line-wrap-2-6 {
+    width: 140.4214%;
+    padding: 0 10px;
+    transform-origin: top left;
+  }
+
+  .winning-line-wrap-0-8 {
+    transform: rotate(45.3deg);
+  }
+
+  .winning-line-wrap-2-6 {
+    bottom: -2px;
+    transform: rotate(-45.2deg);
+  }
 
   .board-row {
     display: flex;
